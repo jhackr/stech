@@ -11,6 +11,7 @@
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/d" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/estech/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/estech/settings.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/estech/static/css/admin.css" afterDir="false" />
@@ -3881,10 +3882,6 @@
               <item name="estech" type="b2602c69:ProjectViewProjectNode" />
               <item name="estech" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="estech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -3993,8 +3990,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32905984" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" visible="true" weight="0.31623933" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32885906" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" visible="true" weight="0.31623933" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32885906" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="3" />
