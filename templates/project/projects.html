@@ -1,0 +1,133 @@
+{#site./projects/#}
+
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+ <div class="gray-line-2"></div>
+
+    <section class="subheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2 class="title-project-subheader">مشاريعنا</h2>
+                </div>
+                <div class="col-lg-8">
+                    <span class="subheaer-menu"><a href="{% url 'index' %}"><i class="fa fa-home" aria-hidden="true"></i></a> <i class="fa fa-angle-left" aria-hidden="true"></i> مشاريعنا</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-project">
+        <div class="container">
+            <div class="row">
+                <div class="clearfix"></div>
+
+                <div id="projects-grid" class="projects-boxes">
+
+                    {% if projects %}
+                        {% for project in projects %}
+
+                            <div class="project-item col-lg-3 col-md-3 col-sm-6 business">
+                                <div class="project-item-inner">
+                                    <img src="{{ project.image.url }}" alt="" class="img-responsive">
+                                    <div class="project-details">
+                                        <p class="folio-title"><a href="{% url 'project' project.id %}">{{ project.title }}</a></p>
+                                        <p class="folio-cate">
+
+
+                                                <a>{{ project.get_category }}</a>
+
+                                        </p>
+                                        <div class="folio-buttons">
+                                            <a href="{{ project.image.url }}" title="{{ project.title }}" class="folio"><i
+                                                    class="fa fa-search"></i></a>
+                                            <a href="{% url 'project' project.id %}"><i class="fa fa-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+                    {% else %}
+                        <div class="col-md-12">
+                        <h1>لا يوجد مشاريع لعرضها</h1>
+                        </div>
+                    {% endif %}
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% if projects.has_other_pages %}
+
+                      <ul class="pagination margin-page">
+                        {% if projects.has_previous %}
+                            <li class="page-item">
+                              <a class="page-link" href="?page={{ projects.previous_page_number }}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                            </li>
+                            {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link">&laquo;</a>
+                            </li>
+                        {% endif %}
+
+                        {% for i in projects.paginator.page_range %}
+                            {% if projects.number == i %}
+                                <li class="page-item active">
+                                    <a class="page-link">{{ i }}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if projects.has_next %}
+                            <li class="page-item">
+                              <a class="page-link" href="?page={{ projects.next_page_number }}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </li>
+                            {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link">&laquo;</a>
+                            </li>
+                        {% endif %}
+                      </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="top-footer">
+      <div class="sep-background-mask"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="cal-to-action text-center">
+              <span>اكملنا اليوم مايقارب <b>425+</b> مشروعاً، اذا كنت مهتماً لا تتردد بالتواصل معنا</span>
+              <a href="#" class="btn btn-border-light wow heartBeat slow">تواصل معنا</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+
+
+

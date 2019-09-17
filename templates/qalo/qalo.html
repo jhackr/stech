@@ -1,0 +1,120 @@
+{#site./qalo/#}
+
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+     <div class="gray-line-2"></div>
+
+    <section class="subheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2 class="title-project-subheader">قالو عنّا</h2>
+                </div>
+                <div class="col-lg-8">
+                    <span class="subheaer-menu"><a href="{% url 'index' %}"><i class="fa fa-home" aria-hidden="true"></i></a> <i
+                            class="fa fa-angle-left" aria-hidden="true"></i>قالو عنّا</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="content" class="no-padding">
+
+    <section id="section-project" class="sec-pad">
+        <div class="container">
+            <div class="row margin-top">
+            {% if qalo %}
+                {% for qalo in qalo %}
+                    <div class="col-md-4">
+                        <div class="photo-test">
+                            <div class="img-frame-qalo">
+                                <img class="img-test" src="{{ qalo.image.url }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="text-testo">
+                            <div class="testi-details">
+                                <h3>{{ qalo.title }}</h3>
+                                <span>{{ qalo.desc }}</span>
+                                <div class="tiny-border-testo"></div>
+                            <div class="testi-boxes">
+                                <i class="fas fa-quote-right"></i>
+                                <blockquote>
+                                    {{ qalo.content }}
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="tiny-border-testo-tall"></div>
+                </div>
+            {% endfor %}
+            {% else %}
+                <div class="col-md-12 text-center clearfix">
+                <h1>لا يوجد مشاريع لعرضها</h1>
+                </div>
+                <div class="clearfix"></div>
+            {% endif %}
+            </div>
+        </section>
+
+        <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% if qalo.has_other_pages %}
+
+                      <ul class="pagination margin-page">
+                        {% if qalo.has_previous %}
+                            <li class="page-item">
+                              <a class="page-link" href="?page={{ qalo.previous_page_number }}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                            </li>
+                            {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link">&laquo;</a>
+                            </li>
+                        {% endif %}
+
+                        {% for i in qalo.paginator.page_range %}
+                            {% if qalo.number == i %}
+                                <li class="page-item active">
+                                    <a class="page-link">{{ i }}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if qalo.has_next %}
+                            <li class="page-item">
+                              <a class="page-link" href="?page={{ qalo.next_page_number }}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </li>
+                            {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link">&laquo;</a>
+                            </li>
+                        {% endif %}
+                      </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+{% endblock %}
+
+
+

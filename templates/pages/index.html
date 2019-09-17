@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="aboutUs">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 about-img">
+            <img src="img/aboutsec.jpg" class="img-fluid pull-xs-left" alt="...">
+          </div>
+          <div class="col-md-5 col-sm-6 about-text wow fadeInRight">
+            <h3 class="box-title">نحن المعايير التقنية</h3>
+            <div class="tiny-border"></div>
+            <p class="text-about">
+            منشاة تقنية ذات علامة تجارية ® مسجلة رسمياً في وزارة التجارة والإستثمار بالمملكة، تأسست في عام 2007م ، وتعمل في مجال التقنية ببناء
+            </p>
+            <ol class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check-circle"></i></span>الأنظمة والبرامج</li>
+              <li><span class="fa-li"><i class="fas fa-check-circle"></i></span>المواقع الإلكترونية</li>
+              <li><span class="fa-li"><i class="fas fa-check-circle"></i></span>التطبيقات الذكية</li>
+              <li><span class="fa-li"><i class="fas fa-check-circle"></i></span>التسويق الإلكتروني</li>
+            </ol>
+            <div class="button-about">
+                <button type="button" class="btn btn-about">المزيد عن المعايير</button>
+            </div>
+
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="feature-box wow fadeInLeft">
+              <h3 class="box-title">ما يميزنا</h3>
+              <div class="tiny-border"></div>
+
+              <div class="feature">
+                <i class="fab fa-adobe"></i>
+                <h6>تصاميم عصرية</h6>
+                <p>كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة</p>
+
+              </div>
+              <div class="feature">
+                <i class="far fa-calendar-alt"></i>
+                <h6>سرعة بالتنفيذ</h6>
+                <p>كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة</p>
+
+              </div>
+              <div class="feature no-margin-bottom">
+                <i class="far fa-chart-bar"></i>
+                <h6>خبرة كافية</h6>
+                <p>كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة</p>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        </div>
+
+      <div class="clearfix"></div>
+    </section>
+<!-- section end -->
+<!-- section begin -->
+    <section id="section-project" class="no-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 wow flipInX slower">
+            <div class="latest-projects clearfix">
+              <div class="latest-projects-intro">
+                <h3 class="box-title">آخر مشاريعنا</h3>
+                <div class="tiny-border-light"></div>
+                <p>كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة</p>
+                </div>
+                <div class="latest-projects-wrapper">
+                    <div id="latest-projects-items" class="latest-projects-items owl-carousel">
+
+                        {% if projects %}
+                            {% for project in projects %}
+                                <div class="item">
+                                    <img src="{{ project.image.url }}" alt="" class="img-responsive">
+                                    <div class="project-details">
+                                        <p class="folio-title"><a href="{% url 'project' project.id %}">{{ project.title }}</a></p>
+                                         <p class="folio-cate">
+                                                <a>{{ project.get_category }}</a>
+                                        </p>
+                                        <div class="folio-buttons">
+                                            <a href="{{ project.img.url }}" title="{{ project.title }}" class="folio"><i class="fa fa-search"></i></a>
+                                            <a href="{% url 'project' project.id %}"><i class="fa fa-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+
+                        {% else %}
+                            <div class="col-md-12 text-right">لا يوجد مشاريع لعرضها</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+<!-- section begin -->
+    <section class="our-service wow fadeInRight">
+
+      <div class="container">
+        <div class="row clearfix align-items-stretch bottommargin-lg">
+            <div class="lines-overlay"></div>
+          <div class="col-lg-12 col-md-12 sec-paading text-center wow fadeInRight">
+            <h5 class="wow animated bounce sec-title">نقدم لك أفضل</h5>
+            <h3 class="service-title wow animated swing">الخدمات الالكترونية بخبرات تمتد حتى 13 سنة</h3>
+          </div>
+            <div class="col-lg-3 col-md-6 white text-center col-padding" style="background-Color: #0078ff;">
+              <div class="service-icon">
+                <i class="far fa-clock"></i>
+              </div>
+              <h5 class="counter">16040</h5>
+              <div class="tiny-border-service"></div>
+              <p>ساعة من البرمجة</p>
+            </div>
+            <div class="col-lg-3 col-md-6 white text-center col-padding" style="background-Color: #2da7b5;">
+              <div class="service-icon">
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <h5 class="counter">467</h5>
+              <div class="tiny-border-service"></div>
+              <p>عدد المشاريع</p>
+            </div>
+            <div class="col-lg-3 col-md-6 white text-center col-padding" style="background-Color: #3cc1a3;">
+              <div class="service-icon">
+                <i class="fab fa-app-store"></i>
+              </div>
+              <h5><span class="counter">4055</span>K</h5>
+              <div class="tiny-border-service"></div>
+              <p>كيلوبت من الملفات</p>
+            </div>
+            <div class="col-lg-3 col-md-6 white text-center col-padding" style="background-Color: #49b880;">
+              <div class="service-icon">
+                <i class="fab fa-buysellads"></i>
+              </div>
+              <h5><span class="counter">5000</span>K</h5>
+              <div class="tiny-border-service"></div>
+              <p>اجمالي الاسطر البرمجية</p>
+            </div>
+        </div>
+      </div>
+    </section>
+<!-- section end -->
+<!-- section begin -->
+    <section class="qalo wow slideInUp slow">
+      <div class="container">
+        <div class="row clearfix">
+          <div class="col-lg-8 col-md-12">
+            <div class="testimonials-slider-wrapper">
+              <h3 class="box-title"><i class="fas fa-quote-right"></i><a href="{% url 'qalo' %}"><span class="box-title-qalo">قالو عنّا</span></a></h3>
+              <div class="compact-buttons">
+                  <div class="latest-next compact-next"><i class="fa fa-angle-right"></i></div>
+                  <div class="latest-prev compact-prev"><i class="fa fa-angle-left"></i></div>
+              </div>
+              <div class="tiny-border"></div>
+              <div class="testimonials-slider owl-carousel">
+                   {% if qalo %}
+                        {% for qalo in qalo %}
+                  <div class="item">
+                      <div class="testi-boxes">
+                        <i class="fas fa-quote-right"></i>
+                          <blockquote>
+                            {{ qalo.content }}
+                          </blockquote>
+                          <div class="testi-info clearfix">
+                              <img alt="" src="{{ qalo.image_thumbnail.url }}" class="img-circle">
+                              <div class="testi-details">
+                                  <span>{{ qalo.title }}</span>
+                                  {{ qalo.desc }}
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                {% endfor %}
+                {% else %}
+                       <div class="col-md-12 text-right">وين يالحبيب؟ ايش قالو الناس عنك روح دخلها من الادمن</div>
+                {% endif %}
+              </div>
+          </div>
+          </div>
+          <div class="col-lg-4 col-md-12 twitter-block">
+            <a class="twitter-timeline" data-lang="ar" data-height="400" data-theme="light" data-link-color="#29b6f6" href="https://twitter.com/stechws?ref_src=twsrc%5Etfw">Tweets by stechws</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section end -->
+    <!-- section begin -->
+    <section class="top-footer">
+      <div class="sep-background-mask"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="cal-to-action text-center">
+              <span>اكملنا اليوم مايقارب <b>425+</b> مشروعاً، اذا كنت مهتماً لا تتردد بالتواصل معنا</span>
+              <a href="#" class="btn btn-border-light wow heartBeat slow">تواصل معنا</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+{% endblock %}

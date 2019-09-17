@@ -1,0 +1,243 @@
+.aligned label {
+    float: right;
+}
+
+.aligned .vCheckboxLabel {
+    padding: 0 5px 0 0;
+}
+
+.add-dashboard-link {
+    border-radius: 4px 0 0 4px !important;
+}
+
+.add-dashboard + .select2 .select2-selection{
+    border-radius: 0 4px 4px 0 !important;
+}
+
+.dashboard-item-content ul:not(.inline) li .float-right {
+    margin-left: 5px;
+    float: left;
+}
+
+.submit-row {
+    float: left;
+}
+
+thead th:last-child, tfoot td:last-child {
+    border-radius: 4px 0 0 0;
+    text-align: right;
+}
+
+thead th:first-child, tfoot td:first-child {
+    border-radius: 0 4px 0 0;
+}
+
+th {
+    text-align: right;
+}
+
+.aligned label + p {
+    margin-right: 170px;
+}
+
+.file-upload {
+    line-height: 220%;
+}
+
+thead th, tfoot td {
+    text-align: right;
+}
+
+.icon-arrow-right::before {
+    content: "\e60a";
+}
+
+.icon-arrow-left::before {
+    content: "\e60b";
+}
+
+.sidebar {
+    right: 0;
+    left: unset;
+}
+
+.sidebar-popup {
+    right: 0;
+    left: unset;
+}
+
+body.menu-pinned #container {
+    padding-left: 0;
+    padding-right: 17.85714rem;
+}
+
+body.login #container {
+    padding: 0 !important;
+}
+
+.dashboard-tools {
+    right: unset;
+    left: 15.35714rem;
+}
+
+#login-form {
+    margin-top: 130px;
+}
+
+body.change-list .object-tools {
+    float: left;
+}
+
+div.breadcrumbs{
+    padding: 10px 25px 10px 20px;
+}
+
+.paginator .pages-wrapper span:first-child, .paginator .pages-wrapper a:first-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.paginator .pages-wrapper span:last-child, .paginator .pages-wrapper a:last-child {
+    border-radius: 4px 0 0 4px;
+}
+body.login #content-main {
+    width: 100%;
+    background-image: url(/static/img/logo.png);
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+#branding-menu {
+    display: none;
+}
+
+#branding-pin {
+    display: none;
+}
+
+.user-tools ul {
+    right: unset;
+    left: 1.42857rem;
+}
+
+.dashboard-item-header-drag {
+    float: left;
+}
+
+.dashboard-item-header-buttons {
+    float: left;
+}
+
+html {
+    direction: rtl;
+
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+}
+.sidebar-popup-container {
+    right: 250px;
+    left: 0;
+}
+
+.related-popup-back, .related-popup-back:visited, .related-popup-back:hover {
+    right: 250px;
+    left: unset;
+}
+
+.sidebar-left {
+    right: 4px;
+    left: unset;
+}
+
+.sidebar-right {
+    float: left;
+    margin-left: unset;
+    margin-right: 0.71429rem;
+}
+
+.sidebar-link-label {
+    margin-right: 20px;
+    margin-left: unset;
+}
+
+.sidebar-link-icon {
+    margin-right: unset;
+    margin-left: 0.42857rem;
+}
+
+.dashboard-item-content ul.inline li:first-child {
+    margin-right: 0;
+    margin-left: unset;
+}
+
+.dashboard-item-content ul.inline li {
+    margin-left: 10px;
+    margin-right: 0.71429rem;
+}
+
+body.menu-pinned .changelist-footer.fixed {
+    right: 270px;
+    left: 20px;
+}
+
+.vDateField-link span, .vTimeField-link span {
+    border-radius: 4px 0 0 4px;
+}
+
+.vDateField-link + .vTimeField {
+    margin-right: 10px;
+    margin-left: unset;
+}
+
+.vDateField, .vTimeField {
+    border-radius: 0 4px 4px 0 !important;
+    border-left-width: 0 !important;
+    border-right-width: unset;
+}
+
+.segmented-button.left {
+    border-radius: 0 4px 4px 0;
+}
+
+.segmented-button.right {
+    border-radius: 4px 0 0 4px;
+}
+
+.changeform-navigation-button-icon.right {
+    float: left;
+}
+
+.changeform-navigation-button-icon.left {
+    float: right;
+}
+
+.user-tools ul li.user-tools-welcome-msg::before {
+    float: left;
+}
+
+.sidebar-close {
+    display: block;
+    float: left;
+}
+
+
+@media only screen and (max-width: 960px) {
+    .sidebar {
+        right: unset;
+        left: 0;
+    }
+
+}
+
+@media only screen and (max-width: 480px){
+    .sidebar-popup {
+        right: 0;
+        left: 0;
+    }
+
+    .sidebar-popup-container {
+     right: 0;
+    left: inherit;
+}
+}

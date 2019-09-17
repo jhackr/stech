@@ -1,0 +1,64 @@
+{#site./pages/#}
+
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<div class="gray-line-2"></div>
+
+    <section class="subheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2 class="title-project-subheader">صفحات الموقع</h2>
+                </div>
+                 <div class="col-lg-8">
+                    <span class="subheaer-menu"><a href="{% url 'index' %}"><i class="fa fa-home" aria-hidden="true"></a></i> <i class="fa fa-angle-left" aria-hidden="true"></i><a
+                            href="{% url 'pages' %}">صفحات الموقع</a>
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>{{ page.title }}</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div id="content" class="no-padding">
+
+        <section id="section-project" class="sec-pad">
+            <div class="container">
+                <div class="row margin-top">
+                    <div class="col-md-12 margin-top">
+                        <div class="photo-test">
+                            <div class="img-frame-qalo">
+                                <div class="mask"></div>
+                                <img class="img-test" src="{{ page.img.url }}" alt="">
+                            </div>
+                        </div>
+                        <div class="text-pages">
+                            <h3>{{ page.title }}</h3>
+                            <p>{{ page.content }}</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+    </div>
+
+        <section class="top-footer">
+      <div class="sep-background-mask"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="cal-to-action text-center">
+              <span>اكملنا اليوم مايقارب <b>425+</b> مشروعاً، اذا كنت مهتماً لا تتردد بالتواصل معنا</span>
+              <a href="#" class="btn btn-border-light wow heartBeat slow">تواصل معنا</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+
+
+
